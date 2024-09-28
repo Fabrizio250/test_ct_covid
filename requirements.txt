@@ -8,10 +8,13 @@ scikit-learn
 torch
 torchvision
 opencv-python
-
 PyYAML
 pydantic
 python-multipart
 uvicorn
 fastapi[all]
 prometheus_fastapi_instrumentator
+seaborn
+jinja2
+requests
+
