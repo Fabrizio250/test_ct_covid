@@ -1,0 +1,22 @@
+[
+    {
+        "ID": 1,
+        "Name": "GitHub",
+        "Manufacturer": "GitHub, Inc.",
+        "Bug tracker URL": "https://github.com/github/feedback/issues",
+        "Needs validation?": "-",
+        "Next validation": "-",
+        "Last validation": "2024-09-13",
+        "Decommissioning": "-"
+    },
+    {
+        "ID": 2,
+        "Name": "PyCharm/IntelliJ IDEA",
+        "Manufacturer": "JetBrains",
+        "Bug tracker URL": "https://youtrack.jetbrains.com/issues/IDEA",
+        "Needs validation?": "-",
+        "Next validation": "-",
+        "Last validation": "2024-09-13",
+        "Decommissioning": "-"
+    }
+]

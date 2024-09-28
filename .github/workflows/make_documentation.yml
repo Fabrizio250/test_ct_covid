@@ -1,0 +1,43 @@
+name: Generate Documentation
+
+on:
+  push:
+    branches:
+      - '**'  # tutti i branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run main script
+        run: |
+          cd docs/maker_documentation
+          python main.py
+           
+      - name: Set up Git config
+        run: |
+          git config --global user.email "author_email"
+          git config --global user.name "author_name"
+
+      - name: Commit and push changes
+        run: |
+          cd docs
+          git add md_docs/software-list.md
+          git add md_docs/soup-list.md
+          git commit -m 'Update documentation files' || echo "No changes to commit"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

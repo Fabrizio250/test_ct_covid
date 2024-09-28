@@ -1,0 +1,17 @@
+tqdm
+numpy
+scipy
+pandas
+pillow
+matplotlib
+scikit-learn
+torch
+torchvision
+opencv-python
+
+PyYAML
+pydantic
+python-multipart
+uvicorn
+fastapi[all]
+prometheus_fastapi_instrumentator

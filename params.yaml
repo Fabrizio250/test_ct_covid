@@ -1,0 +1,11 @@
+training:
+  lr: 1e-4
+  seed: 42
+  optimizer: 'adam'
+  batch_size: 32
+  epochs: 25
+  patience: 3
+  data_path: 'data/ct'
+evaluation:
+  n_attention_maps: 100
+  data_path: 'data/ct'
