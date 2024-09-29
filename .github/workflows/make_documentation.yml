@@ -23,18 +23,20 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run main script
-        id: run_script  # Aggiungi un ID per questo passo
         run: |
           cd docs/maker_documentation
           python main.py
+
+      - name: Wait for processing to finish
+        run: |
+          sleep 20  # Aspetta 20 secondi per assicurarti che le operazioni siano completate
           
       - name: Set up Git config
         run: |
-          git config --global user.email "author_email"
-          git config --global user.name "author_name"
+          git config --global user.email "author_email@example.com"  # Modifica con la tua email
+          git config --global user.name "author_name"  # Modifica con il tuo nome
 
       - name: Commit and push changes
-        if: steps.run_script.outputs.changes == 'true'  # Esegui solo se ci sono cambiamenti
         run: |
           cd docs
           git add md_docs/software-list.md
