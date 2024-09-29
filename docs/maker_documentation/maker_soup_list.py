@@ -182,12 +182,14 @@ def get_last_verified_at_from_pypi(package_name):
         response = requests.get(url)
         response.raise_for_status()
         data = response.json()
-        last_modified = data.get('urls', [{}])[0].get('upload_time', 'Unknown')
 
-        if last_modified:
-             return last_modified.split('T')[0]  # Restituisce solo la data
+        urls = data.get('urls', [])
+        if urls:
+            last_modified = urls[0].get('upload_time', 'Unknown')
         else:
-             return 'Unknown'  # Caso in cui non ci sono URL
+            last_modified = 'Unknown'
+
+        return last_modified.split('T')[0] if last_modified != 'Unknown' else 'Unknown'
         
     except requests.exceptions.RequestException as e:
         print(f"Errore nella richiesta di informazioni per {package_name} da PyPI: {e}")
