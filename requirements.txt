@@ -12,9 +12,9 @@ PyYAML
 pydantic
 python-multipart
 uvicorn
-fastapi[all]
+fastapi
 prometheus_fastapi_instrumentator
 seaborn
 jinja2
 requests
-
+opencv-python
