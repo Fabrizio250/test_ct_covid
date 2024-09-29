@@ -27,9 +27,6 @@ jobs:
           cd docs/maker_documentation
           python main.py
 
-      - name: Wait for processing to finish
-        run: |
-          sleep 20  # Aspetta 20 secondi per assicurarti che le operazioni siano completate
           
       - name: Set up Git config
         run: |
