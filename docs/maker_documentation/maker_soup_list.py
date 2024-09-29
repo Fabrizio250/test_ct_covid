@@ -273,6 +273,9 @@ def generate_soup_list(requirements, unknown_dependencies):
 
 # Genera il contenuto del file markdown basato su una lista SOUP e un template Jinja2.
 def generate_soup_list_md(soup_list, template_path, output_md_path):
+
+    print("contenuto della SOUP LIST:" ,soup_list) #debug
+
     if not soup_list:
         print("La SOUP list è vuota.")
         return
