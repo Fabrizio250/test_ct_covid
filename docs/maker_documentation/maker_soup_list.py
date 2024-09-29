@@ -64,6 +64,7 @@ def parse_imports_from_source(directory, excluded_files):
                             module_name = match.group(2).split('.')[0]
                             if module_name:  # Controllo per evitare moduli vuoti
                                 imports.add(module_name)
+
     print("Moduli importati trovati:", imports)  # Debug
     return list(imports)
 
@@ -183,13 +184,12 @@ def get_last_verified_at_from_pypi(package_name):
         response = requests.get(url)
         response.raise_for_status()
         data = response.json()
-        urls = data.get('urls', [])
-        
-        if urls:  # Verifica se la lista non è vuota
-            last_modified = urls[0].get('upload_time', 'Unknown')
-            return last_modified.split('T')[0]  # Restituisce solo la data
+        last_modified = data.get('urls', [{}])[0].get('upload_time', 'Unknown')
+
+        if last_modified:
+             return last_modified.split('T')[0]  # Restituisce solo la data
         else:
-            return 'Unknown'  # Caso in cui non ci sono URL
+             return 'Unknown'  # Caso in cui non ci sono URL
         
     except requests.exceptions.RequestException as e:
         print(f"Errore nella richiesta di informazioni per {package_name} da PyPI: {e}")
