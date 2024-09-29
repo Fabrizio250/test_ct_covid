@@ -74,7 +74,7 @@ def find_unknown_dependencies(requirements, imports, standard_libs, excluded_fil
     requirements_set = set(requirements)
 
     # Moduli da escludere (quelli che causavano errore)
-    excluded_dependencies = {'fastapi', 'utils_test', 'tests', 'yaml', 'covidx', 'cv2', 'fastapi[all]'}
+    excluded_dependencies = {'fastapi', 'utils_test', 'tests', 'yaml', 'covidx', 'cv2', 'fastapi[all]', 'itertools'}
 
     # Filtra importazioni, ignorando quelle locali e quelle standard
     unknown_imports = [imp for imp in imports if imp not in requirements_set and imp not in standard_libs and imp not in excluded_files and imp not in local_modules and imp not in excluded_dependencies ]
