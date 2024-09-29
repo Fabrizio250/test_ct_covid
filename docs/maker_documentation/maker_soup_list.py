@@ -111,6 +111,9 @@ def fetch_software_system_from_pypi(package_name):
             if classifier.startswith('Operating System ::'):
                 return classifier.split('::')[-1].strip()
         return 'Unknown'
+    except requests.exceptions.HTTPError as http_err:
+        print(f"Errore HTTP per il pacchetto '{package_name}': {http_err}")
+        return 'Unknown'
     except requests.exceptions.RequestException as e:
         print(f"Errore nella richiesta di informazioni per {package_name} da PyPI: {e}")
         return 'Unknown'
@@ -170,6 +173,9 @@ def fetch_language_from_pypi(package_name):
         for classifier in classifiers:
             if classifier.startswith('Programming Language ::'):
                 return classifier.split('::')[-1].strip()
+        return 'Unknown'
+    except requests.exceptions.HTTPError as http_err:
+        print(f"Errore HTTP per il pacchetto '{package_name}': {http_err}")
         return 'Unknown'
     except requests.exceptions.RequestException as e:
         print(f"Errore nella richiesta di informazioni per {package_name} da PyPI: {e}")
