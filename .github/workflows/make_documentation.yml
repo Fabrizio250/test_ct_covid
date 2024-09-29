@@ -23,16 +23,18 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run main script
+        id: run_script  # Aggiungi un ID per questo passo
         run: |
           cd docs/maker_documentation
           python main.py
-           
+          
       - name: Set up Git config
         run: |
           git config --global user.email "author_email"
           git config --global user.name "author_name"
 
       - name: Commit and push changes
+        if: steps.run_script.outputs.changes == 'true'  # Esegui solo se ci sono cambiamenti
         run: |
           cd docs
           git add md_docs/software-list.md
