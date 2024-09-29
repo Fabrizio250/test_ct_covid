@@ -1,5 +1,4 @@
 from typing import Callable
-
 import prometheus_fastapi_instrumentator as pinst
 from prometheus_fastapi_instrumentator.metrics import Info
 from prometheus_client import Histogram

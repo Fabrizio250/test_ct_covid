@@ -3,13 +3,11 @@ import os
 import torch
 import torchvision
 import uvicorn
-
 from http import HTTPStatus
 from PIL import Image as pil
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import Query, FastAPI, Request, UploadFile, File
 from fastapi.responses import StreamingResponse, Response
-
 from monitoring import setup_prometheus_instrumentator
 from covidx.utils.plot import save_binary_attention_map
 from covidx.ct.models import CTNet

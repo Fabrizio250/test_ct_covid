@@ -2,7 +2,6 @@ import json
 import os
 import yaml
 import torch
-
 from tqdm import tqdm
 from sklearn import metrics
 from covidx.ct.dataset import load_datasets
