@@ -42,16 +42,41 @@
 > your git repository, go for it! Just keep in mind that you need to be able to export it to send it to
 > auditors.
 
-
-
 | ID | Software System | Package Name | Programming Language | Version | Website                                          | Last verified at | Risk Level | Requirements               | Verification Reasoning                                                    |
 |----|-----------------|--------------|----------------------|---------|--------------------------------------------------|------------------|------------|----------------------------|---------------------------------------------------------------------------|
-{% for item in soup_list %}| {{ item.ID }} | {{ item['Software System'] }} | {{ item['Package Name'] }} | {{ item['Programming Language'] }} | {{ item['Version'] }} | [{{ item['Website'] }}]({{ item['Website'] }}) | {{ item['Last verified at'] }} | {{ item['Risk Level'] }} | {{ item['Requirements'] }} | {{ item['Verification Reasoning'] }} |
-{% endfor %}
+| 1 | MacOS | numpy | Python | 2.0.2 | [https://numpy.org](https://numpy.org) | 2024-09-03 | N/A | N/A | N/A |
+| 2 | MacOS | scipy | Python | 1.13.1 | [https://scipy.org/](https://scipy.org/) | 2024-08-21 | N/A | N/A | N/A |
+| 3 | OS Independent | seaborn | Python | 0.13.2 | [unknown](unknown) | 2024-01-25 | N/A | N/A | N/A |
+| 4 | OS Independent | Jinja2 | Python | 3.1.4 | [unknown](unknown) | 2024-05-05 | N/A | N/A | N/A |
+| 5 | OS Independent | pandas | Python | 2.2.3 | [https://pandas.pydata.org](https://pandas.pydata.org) | 2024-09-20 | N/A | N/A | N/A |
+| 6 | OS Independent | requests | Python | 2.32.3 | [https://requests.readthedocs.io](https://requests.readthedocs.io) | 2024-05-29 | N/A | N/A | N/A |
+| 7 | Unknown | matplotlib | Python | 3.9.2 | [unknown](unknown) | 2024-08-13 | N/A | N/A | N/A |
+| 8 | Unknown |  | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 9 | Unknown | itertools | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 10 | Unknown | sklearn | Unknown | unknown | [unknown](unknown) | 2023-12-01 | unknown | unknown | unknown |
+| 11 | MacOS | tqdm | Python | unknown | [unknown](unknown) | 2024-08-03 | unknown | unknown | unknown |
+| 12 | Unknown | covidx | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 13 | Unknown | prometheus_fastapi_instrumentator | 3 | unknown | [unknown](unknown) | 2024-03-13 | unknown | unknown | unknown |
+| 14 | Unknown | torch | C++ | unknown | [unknown](unknown) | 2024-09-04 | unknown | unknown | unknown |
+| 15 | OS Independent | monitoring | Python | unknown | [unknown](unknown) | 2019-07-02 | unknown | unknown | unknown |
+| 16 | OS Independent | locust | Python | unknown | [unknown](unknown) | 2024-09-28 | unknown | unknown | unknown |
+| 17 | Unknown | PIL | Python | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 18 | Unknown | time | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 19 | MacOS | pytest | Only | unknown | [unknown](unknown) | 2024-09-10 | unknown | unknown | unknown |
+| 20 | OS Independent | fastapi | Python | unknown | [unknown](unknown) | 2024-09-17 | unknown | unknown | unknown |
+| 21 | Unknown | yaml | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 22 | OS Independent | evaluate | 3 | unknown | [unknown](unknown) | 2024-09-11 | unknown | unknown | unknown |
+| 23 | OS Independent | uvicorn | 3 | unknown | [unknown](unknown) | 2024-09-27 | unknown | unknown | unknown |
+| 24 | Unknown | api | Unknown | unknown | [unknown](unknown) | 2017-11-08 | unknown | unknown | unknown |
+| 25 | Unknown | prometheus_client | Python | unknown | [unknown](unknown) | 2024-09-20 | unknown | unknown | unknown |
+| 26 | Unknown | utils_test | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 27 | Unknown | cv2 | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 28 | Unknown | torchvision | Unknown | unknown | [unknown](unknown) | 2024-09-04 | unknown | unknown | unknown |
+| 29 | Unknown | tests | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+
+
 
 ---
-
-
 Template Copyright [openregulatory.com](https://openregulatory.com). See [template
 license](https://openregulatory.com/template-license).
 

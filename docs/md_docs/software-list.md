@@ -7,15 +7,14 @@
 > Libraries which you include in your product (i.e., which are deployed with it) don't belong here. They belong
 > in the SOUP list.
 
-
-
 | ID | Name          | Manufacturer     | Bug tracker URL                            | Needs validation? | Next validation | Last validation | Decommissioning |
 |----|---------------|------------------|--------------------------------------------|-------------------|-----------------|-----------------|-----------------|
-{% for software in software_list %} | {{ software.ID }}  | {{ software.Name }} | {{ software.Manufacturer }} | {{ software.get('Bug tracker URL', '') }} | {{ software.get('Needs validation?', '') }} | {{ software.get('Next validation', '') }} | {{ software.get('Last validation', '') }} | {{ software.get('Decommissioning', '') }} |
-{% endfor %}
+ | 2  | Docker | Docker Inc. | https://www.docker.com/support | - | - | 2024-09-30 | - |
+ | 36  | GitHub | GitHub, Inc. | https://github.com/github/feedback/issues | - | - | 2024-09-30 | - |
+ | 1  | PyCharm/IntelliJ IDEA | JetBrains | https://youtrack.jetbrains.com/issues/IDEA | - | - | 2024-09-23 | 2024-09-30 |
+
 
 ---
-
 
 Template Copyright [openregulatory.com](https://openregulatory.com). See [template
 license](https://openregulatory.com/template-license).
