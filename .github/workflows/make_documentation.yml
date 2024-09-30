@@ -1,9 +1,7 @@
 name: Generate Documentation
 
 on:
-  push:
-    branches:
-      - '**'  # tutti i branch
+  pull_request
 
 jobs:
   build:
