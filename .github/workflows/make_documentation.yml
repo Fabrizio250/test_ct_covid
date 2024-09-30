@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -25,13 +27,11 @@ jobs:
         run: |
           cd docs/maker_documentation
           python main.py
-           
 
       - name: Set up Git config
         run: |
           git config --global user.email "author_email"
           git config --global user.name "author_name"
-
 
       - name: Commit and push changes
         run: |
@@ -39,6 +39,6 @@ jobs:
           git add md_docs/software-list.md
           git add md_docs/soup-list.md
           git commit -m 'Update documentation files' || echo "No changes to commit"
-          git push
+          git push origin HEAD:${{ github.head_ref }} --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
