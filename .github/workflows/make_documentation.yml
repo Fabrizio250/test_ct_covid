@@ -1,7 +1,9 @@
 name: Generate Documentation
 
 on:
-  pull_request
+  push:
+    branches:
+      - '**'  # tutti i branch
 
 jobs:
   build:
@@ -18,18 +20,20 @@ jobs:
 
       - name: Install dependencies
         run: |
+          cd docs/maker_documentation
           pip install -r requirements.txt
 
       - name: Run main script
         run: |
           cd docs/maker_documentation
           python main.py
+           
 
-          
       - name: Set up Git config
         run: |
           git config --global user.email "author_email"
           git config --global user.name "author_name"
+
 
       - name: Commit and push changes
         run: |
