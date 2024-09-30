@@ -7,15 +7,12 @@
 > Libraries which you include in your product (i.e., which are deployed with it) don't belong here. They belong
 > in the SOUP list.
 
-{% raw %}
-
 | ID | Name          | Manufacturer     | Bug tracker URL                            | Needs validation? | Next validation | Last validation | Decommissioning |
 |----|---------------|------------------|--------------------------------------------|-------------------|-----------------|-----------------|-----------------|
 {% for software in software_list %} | {{ software.ID }}  | {{ software.Name }} | {{ software.Manufacturer }} | {{ software.get('Bug tracker URL', '') }} | {{ software.get('Needs validation?', '') }} | {{ software.get('Next validation', '') }} | {{ software.get('Last validation', '') }} | {{ software.get('Decommissioning', '') }} |
 {% endfor %}
 
 ---
-{% endraw %}
 
 Template Copyright [openregulatory.com](https://openregulatory.com). See [template
 license](https://openregulatory.com/template-license).

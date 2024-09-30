@@ -4,10 +4,28 @@ from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
 
 
+# Funzione per trovare la radice del progetto cercando la directory .git
+def find_git_root(start_path):
+    current_path = os.path.abspath(start_path)
+    
+    while current_path != os.path.dirname(current_path):  # Fino a quando non siamo nella radice
+        if os.path.isdir(os.path.join(current_path, '.git')):  # Controlla se esiste la cartella .git
+            return current_path  # Ritorna la radice del progetto
+        current_path = os.path.dirname(current_path)  # Risali alla directory superiore
+
+    return None  # Se non trova la radice del progetto
+
+
 # Funzione per scansionare tutti i file e raccogliere quelli potenzialmente di configurazione
 def scan_project_files():
     config_files = []
-    for root, dirs, files in os.walk("../../"):
+    project_root = find_git_root(os.getcwd())  # Inizia dalla directory corrente
+    print (project_root)
+    if project_root is None:
+        print("Errore: Radice del progetto non trovata.")
+        return config_files
+
+    for root, dirs, files in os.walk(project_root):  # Usa la radice del progetto
         for file in files:
             if file.endswith((".yml", ".yaml", ".json", ".toml", ".ini", ".cfg", ".config", ".xml", ".conf", ".sh",
                               "Dockerfile", "Makefile")):
@@ -101,21 +119,21 @@ def identify_decommissioned_tools(current_list, previous_list):
 
 # Funzione per salvare la Software List in un file markdown usando Jinja2
 def save_software_list_to_markdown(software_list, template_path, output_path):
-    template_dir = os.path.dirname(template_path)
-    template_name = os.path.basename(template_path)
-
-    env = Environment(loader=FileSystemLoader(template_dir))
-    abs_template_path = os.path.abspath(template_path)
-    abs_output_path = os.path.abspath(output_path)
-
-    # Verifica l'esistenza del template
-    if not os.path.isfile(abs_template_path):
-        print(f"Errore: Il template {abs_template_path} non è stato trovato.")
+    if not software_list:
+        print("La lista del software è vuota.")
         return
 
-    # Crea la directory di output se non esiste
-    os.makedirs(os.path.dirname(abs_output_path), exist_ok=True)
+    # Ottieni la directory di lavoro corrente
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    template_dir = os.path.join(current_dir, os.path.dirname(template_path))
+    template_name = os.path.basename(template_path)
 
+    if not os.path.isdir(template_dir):
+        print(f"Directory del template {template_dir} non esiste.")
+        return
+
+    env = Environment(loader=FileSystemLoader(template_dir))
+    
     try:
         # Carica il template
         template = env.get_template(template_name)
@@ -123,16 +141,21 @@ def save_software_list_to_markdown(software_list, template_path, output_path):
         # Renderizza il template con i dati
         rendered_content = template.render(software_list=software_list)
 
+        # Assicurati che la directory di output esista
+        output_dir = os.path.dirname(output_path)
+        os.makedirs(output_dir, exist_ok=True)
+
         # Salva il contenuto renderizzato nel file di output
-        with open(abs_output_path, 'w') as file:
+        with open(output_path, 'w') as file:
             file.write(rendered_content)
 
-        print(f"File {abs_output_path} aggiornato con successo.")
+        print(f"File {output_path} aggiornato con successo.")
 
     except FileNotFoundError as e:
         print(f"Errore: {e}")
     except Exception as e:
         print(f"Si è verificato un errore: {e}")
+
 
 
 # Funzione per eseguire il primo script
@@ -148,4 +171,6 @@ def run_software_list():
     save_software_list_to_markdown(complete_software_list, template_path, output_path)
 
 
-
+# Esegui la funzione principale
+if __name__ == "__main__":
+    run_software_list()

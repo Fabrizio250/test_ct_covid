@@ -42,16 +42,13 @@
 > your git repository, go for it! Just keep in mind that you need to be able to export it to send it to
 > auditors.
 
-{% raw %}
-
 | ID | Software System | Package Name | Programming Language | Version | Website                                          | Last verified at | Risk Level | Requirements               | Verification Reasoning                                                    |
 |----|-----------------|--------------|----------------------|---------|--------------------------------------------------|------------------|------------|----------------------------|---------------------------------------------------------------------------|
 {% for item in soup_list %}| {{ item.ID }} | {{ item['Software System'] }} | {{ item['Package Name'] }} | {{ item['Programming Language'] }} | {{ item['Version'] }} | [{{ item['Website'] }}]({{ item['Website'] }}) | {{ item['Last verified at'] }} | {{ item['Risk Level'] }} | {{ item['Requirements'] }} | {{ item['Verification Reasoning'] }} |
 {% endfor %}
 
----
-{% endraw %}
 
+---
 Template Copyright [openregulatory.com](https://openregulatory.com). See [template
 license](https://openregulatory.com/template-license).
 
