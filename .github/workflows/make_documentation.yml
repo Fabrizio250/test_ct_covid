@@ -53,7 +53,7 @@ jobs:
           # Add documentation files
           git add docs/md_docs/software-list.md || echo "No software-list.md to add"
           git add docs/md_docs/soup-list.md || echo "No soup-list.md to add"
-          git add docsmd_docs/error_report.txt || echo  "No error-report.txt to add"
+          git add docs/md_docs/error_report.txt || echo  "No error-report.txt to add"
 
           # Add previous_software_list.json from maker_documentation
           git add docs/maker_documentation/previous_software_list.json || echo "No previous_software_list.json to add"
