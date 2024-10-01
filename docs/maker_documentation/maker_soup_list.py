@@ -266,9 +266,10 @@ def generate_soup_list(requirements, unknown_dependencies):
 
     # Aggiungi componenti sconosciuti trovati solo nel codice sorgente
     for dep in unknown_dependencies:
-        package_info = get_package_info(dep)
-        if package_info:
-            soup_list.append(package_info)
+          if dep:  # Controlla se il nome del pacchetto non è vuoto
+            package_info = get_package_info(dep)
+            if package_info:
+                soup_list.append(package_info)
 
     # Assegna ID incrementali
     for index, item in enumerate(soup_list, start=1):
