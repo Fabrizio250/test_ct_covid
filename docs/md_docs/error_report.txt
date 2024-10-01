@@ -1,0 +1,9 @@
+Package: yaml, Error: 404 Client Error: Not Found for url: https://pypi.org/pypi/yaml/json
+Package: cv2, Error: 404 Client Error: Not Found for url: https://pypi.org/pypi/cv2/json
+Package: covidx, Error: 404 Client Error: Not Found for url: https://pypi.org/pypi/covidx/json
+Package: utils_test, Error: 404 Client Error: Not Found for url: https://pypi.org/pypi/utils_test/json
+Package: itertools, Error: 404 Client Error: Not Found for url: https://pypi.org/pypi/itertools/json
+Package: time, Error: list index out of range
+Package: tests, Error: 404 Client Error: Not Found for url: https://pypi.org/pypi/tests/json
+Package: PIL, Error: list index out of range
+Package: , Error: 404 Client Error: Not Found for url: https://pypi.org/pypi//json
