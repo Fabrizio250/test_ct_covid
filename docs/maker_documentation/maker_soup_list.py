@@ -326,7 +326,7 @@ def run_soup_list():
     if not source_directory:
         print("Nessuna radice del repository trovata.")
         return
-    requirements_file = 'requirements.txt'
+    requirements_file = '../../requirements.txt'
     standard_libs = get_standard_libs()
     requirements = parse_requirements(requirements_file)
     source_imports = parse_imports_from_source(source_directory, excluded_files)
