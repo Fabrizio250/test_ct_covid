@@ -110,7 +110,7 @@ def fetch_software_system_from_pypi(package_name):
                 return classifier.split('::')[-1].strip()
         return 'Unknown'
     except requests.exceptions.RequestException as e:
-        print(f"Errore nella richiesta di informazioni per {package_name} da PyPI: {e}")
+        log_error(f"Errore nella richiesta di informazioni per {package_name} da PyPI: {e}")
         return 'Unknown'
 
 
@@ -123,7 +123,7 @@ def detect_programming_language(package_name):
             return analyze_files_in_package(package_path)
         return fetch_language_from_pypi(package_name)
     except Exception as e:
-        print(f"Errore durante l'analisi del linguaggio per {package_name}: {e}")
+        log_error(f"Errore durante l'analisi del linguaggio per {package_name}: {e}")
         return 'Unknown'
 
 
@@ -167,7 +167,7 @@ def fetch_language_from_pypi(package_name):
                 return classifier.split('::')[-1].strip()
         return 'Unknown'
     except requests.exceptions.RequestException as e:
-        print(f"Errore nella richiesta di informazioni per {package_name} da PyPI: {e}")
+        log_error(f"Errore nella richiesta di informazioni per {package_name} da PyPI: {e}")
         return 'Unknown'
 
 
@@ -181,12 +181,21 @@ def get_last_verified_at_from_pypi(package_name):
         last_modified = data.get('urls', [{}])[0].get('upload_time', 'Unknown')
         return last_modified.split('T')[0]  # Restituisce solo la data
     except requests.exceptions.RequestException as e:
-        print(f"Errore nella richiesta di informazioni per {package_name} da PyPI: {e}")
+        log_error(f"Errore nella richiesta di informazioni per {package_name} da PyPI: {e}")
         return 'Unknown'
     except IndexError:
-        print(f"Nessuna informazione disponibile per {package_name}.")
+        log_error(f"Nessuna informazione disponibile per {package_name}.")
         return 'Unknown'
 
+
+error_log = []  # Lista per tenere traccia degli errori unici
+
+def log_error(message):
+    """Registra gli errori nel file di log se non già registrati."""
+    if message not in error_log:
+        error_log.append(message)
+        with open('../md_docs/error_report.txt', 'a') as log_file:
+            log_file.write(f"{message}\n")
 
 def get_package_info(package_name):
     """Funzione per ottenere le informazioni del pacchetto."""
@@ -224,7 +233,7 @@ def get_package_info(package_name):
             'Verification Reasoning': 'unknown'
         }
     except Exception as e:
-        print(f"Errore durante l'ottenimento delle informazioni per {package_name}: {e}")
+        log_error(f"Errore durante l'ottenimento delle informazioni per {package_name}: {e}")
         info = {
             'ID': 'unknown',
             'Software System': 'Unknown',
@@ -323,4 +332,3 @@ def run_soup_list():
     template_path_soup = '../source/template_docs/soup_list_template.md'
     output_md_path_soup = '../md_docs/soup-list.md'
     generate_soup_list_md(soup_list, template_path_soup, output_md_path_soup)
-

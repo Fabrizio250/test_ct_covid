@@ -175,6 +175,3 @@ def run_software_list():
     save_software_list_to_markdown(complete_software_list, template_path, output_path)
 
 
-# Esegui la funzione principale
-if __name__ == "__main__":
-    run_software_list()
