@@ -17,3 +17,4 @@ prometheus_fastapi_instrumentator
 seaborn
 jinja2
 requests
+prometheus_client
