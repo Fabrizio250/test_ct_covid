@@ -38,8 +38,7 @@ jobs:
           
           #aggiorna file requirements.txt
           git add requirements.txt
-          
-          cd docs
+
 
           # Aggiungi i file di documentazione
           git add docs/md_docs/software-list.md || echo "No software-list.md to add"
