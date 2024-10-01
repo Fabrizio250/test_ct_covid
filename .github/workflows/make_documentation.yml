@@ -20,8 +20,9 @@ jobs:
 
       - name: Install dependencies
         run: |
+          cd docs
           # Installa le dipendenze dal file requirements.txt nella directory principale
-          if [ -f "./requirements.txt" ]; then
+          if [ -f "../requirements.txt" ]; then
             echo "Found requirements.txt in the project root"
             pip install -r "./requirements.txt"
           else
@@ -40,8 +41,9 @@ jobs:
 
       - name: Commit and push changes
         run: |
+         cd docs
           # Aggiungi il file requirements.txt dalla directory principale
-          if [ -f "./requirements.txt" ]; then
+          if [ -f "../requirements.txt" ]; then
             echo "Adding requirements.txt from the project root"
             git add "./requirements.txt"
           else
