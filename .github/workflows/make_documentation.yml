@@ -20,14 +20,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd docs
-          # Installa le dipendenze dal file requirements.txt nella directory principale
-          if [ -f "../requirements.txt" ]; then
-            echo "Found requirements.txt in the project root"
-            pip install -r "./requirements.txt"
-          else
-            echo "No requirements.txt found in the project root"
-          fi
+
+          pip install -r requirements.txt
 
       - name: Run main script
         run: |
@@ -41,15 +35,12 @@ jobs:
 
       - name: Commit and push changes
         run: |
-         cd docs
-          # Aggiungi il file requirements.txt dalla directory principale
-          if [ -f "../requirements.txt" ]; then
-            echo "Adding requirements.txt from the project root"
-            git add "./requirements.txt"
-          else
-            echo "No requirements.txt found to add"
-          fi
           
+          #aggiorna file requirements.txt
+          git add requirements.txt
+          
+          cd docs
+
           # Aggiungi i file di documentazione
           git add docs/md_docs/software-list.md || echo "No software-list.md to add"
           git add docs/md_docs/soup-list.md || echo "No soup-list.md to add"
