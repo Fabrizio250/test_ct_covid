@@ -80,23 +80,6 @@ def find_unknown_dependencies(requirements, imports, standard_libs, excluded_fil
     return unknown_imports
 
 
-def update_requirements_file(file_path, unknown_dependencies):
-    """Aggiunge le dipendenze sconosciute al file requirements.txt."""
-    try:
-        with open(file_path, 'a') as file:
-            for dep in unknown_dependencies:
-                file.write(f"{dep}\n")
-        print("Dipendenze sconosciute aggiunte a requirements.txt:", unknown_dependencies)  # Debug
-    except FileNotFoundError:
-        print(f"File {file_path} non trovato. Creazione del file.")
-        with open(file_path, 'w') as file:
-            for dep in unknown_dependencies:
-                file.write(f"{dep}\n")
-        print("File requirements.txt creato e dipendenze sconosciute aggiunte.")  # Debug
-    except Exception as e:
-        print(f"Errore durante l'aggiornamento di {file_path}: {e}")
-
-
 def fetch_software_system_from_pypi(package_name):
     """Cerca di ottenere il sistema software dal sito PyPI."""
     url = f"https://pypi.org/pypi/{package_name}/json"
@@ -331,7 +314,6 @@ def run_soup_list():
     requirements = parse_requirements(requirements_file)
     source_imports = parse_imports_from_source(source_directory, excluded_files)
     unknown_dependencies = find_unknown_dependencies(requirements, source_imports, standard_libs, excluded_files)
-    update_requirements_file(requirements_file, unknown_dependencies)
 
     # Generazione markdown SOUP list
     soup_list = generate_soup_list(requirements, unknown_dependencies)
