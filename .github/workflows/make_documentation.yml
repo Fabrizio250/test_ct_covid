@@ -20,7 +20,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          # Cerca e installa le dipendenze dal file requirements.txt se esiste
+          # Search and install dependencies from requirements.txt if it exists
           REQUIREMENTS_FILE=$(find . -name "requirements.txt" | head -n 1)
           if [ -f "$REQUIREMENTS_FILE" ]; then
             echo "Found requirements.txt at $REQUIREMENTS_FILE"
@@ -41,26 +41,26 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          cd docs
-          
-          # Aggiungi i file specificati
-          git add md_docs/software-list.md
-          git add md_docs/soup-list.md
-          
-          # Cerca e aggiungi il file requirements.txt
+          # Search for and add the requirements.txt file
           REQUIREMENTS_FILE=$(find . -name "requirements.txt" | head -n 1)
           if [ -f "$REQUIREMENTS_FILE" ]; then
             echo "Adding requirements.txt at $REQUIREMENTS_FILE"
-            git add "$REQUIREMENTS_FILE"  # Aggiungi il file requirements.txt
+            git add "$REQUIREMENTS_FILE"
           else
             echo "No requirements.txt found to add"
           fi
+          
+          # Add documentation files
+          git add docs/md_docs/software-list.md || echo "No software-list.md to add"
+          git add docs/md_docs/soup-list.md || echo "No soup-list.md to add"
+          git add docsmd_docs/error_report.txt || echo  "No error-report.txt to add"
 
-          # Aggiungi previous_software_list.json dalla cartella maker_documentation
-          git add maker_documentation/previous_software_list.json || echo "No previous_software_list.json to add"
+          # Add previous_software_list.json from maker_documentation
+          git add docs/maker_documentation/previous_software_list.json || echo "No previous_software_list.json to add"
 
-          # Effettua il commit e push delle modifiche
+          # Commit and push changes
           git commit -m 'Update documentation files and add requirements.txt' || echo "No changes to commit"
           git push origin HEAD:${{ github.head_ref }} --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

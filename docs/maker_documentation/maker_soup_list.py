@@ -110,7 +110,7 @@ def fetch_software_system_from_pypi(package_name):
                 return classifier.split('::')[-1].strip()
         return 'Unknown'
     except requests.exceptions.RequestException as e:
-        print(f"Errore nella richiesta di informazioni per {package_name} da PyPI: {e}")
+        log_error(package_name, f"{e}")
         return 'Unknown'
 
 
@@ -123,7 +123,7 @@ def detect_programming_language(package_name):
             return analyze_files_in_package(package_path)
         return fetch_language_from_pypi(package_name)
     except Exception as e:
-        print(f"Errore durante l'analisi del linguaggio per {package_name}: {e}")
+        log_error(package_name, f"{e}")
         return 'Unknown'
 
 
@@ -167,7 +167,7 @@ def fetch_language_from_pypi(package_name):
                 return classifier.split('::')[-1].strip()
         return 'Unknown'
     except requests.exceptions.RequestException as e:
-        print(f"Errore nella richiesta di informazioni per {package_name} da PyPI: {e}")
+        log_error(package_name, f"{e}")
         return 'Unknown'
 
 
@@ -181,10 +181,10 @@ def get_last_verified_at_from_pypi(package_name):
         last_modified = data.get('urls', [{}])[0].get('upload_time', 'Unknown')
         return last_modified.split('T')[0]  # Restituisce solo la data
     except requests.exceptions.RequestException as e:
-        print(f"Errore nella richiesta di informazioni per {package_name} da PyPI: {e}")
+        log_error(package_name, f"{e}")
         return 'Unknown'
-    except IndexError:
-        print(f"Nessuna informazione disponibile per {package_name}.")
+    except IndexError as err:
+        log_error(package_name, f"{err}")
         return 'Unknown'
 
 
@@ -224,7 +224,7 @@ def get_package_info(package_name):
             'Verification Reasoning': 'unknown'
         }
     except Exception as e:
-        print(f"Errore durante l'ottenimento delle informazioni per {package_name}: {e}")
+        log_error(package_name,f"{e}")
         info = {
             'ID': 'unknown',
             'Software System': 'Unknown',
@@ -239,6 +239,20 @@ def get_package_info(package_name):
         }
     return info
 
+def log_error(package_name, error_message):
+    error_entry = f"Package: {package_name}, Error: {error_message}\n"
+
+    if not os.path.exists("../md_docs/error_report.txt"):
+        with open('../md_docs/error_report.txt', 'w'):
+            pass
+    with open('../md_docs/error_report.txt', 'r') as file:
+        righe = file.readlines()
+    try:
+        if error_entry not in righe:
+            with open('../md_docs/error_report.txt', 'a') as error_file:
+                error_file.write(error_entry)
+    except Exception as e:
+        print(f"Errore durante la scrittura nel file di report degli errori: {e}")
 
 def generate_soup_list(requirements, unknown_dependencies):
     """Genera la SOUP list con componenti di origine sconosciuta e la restituisce."""
