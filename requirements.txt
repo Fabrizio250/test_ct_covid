@@ -18,3 +18,17 @@ seaborn
 jinja2
 requests
 prometheus_client
+monitoring
+utils_test
+yaml
+covidx
+cv2
+locust
+time
+pytest
+tests
+PIL
+sklearn
+evaluate
+api
+itertools
