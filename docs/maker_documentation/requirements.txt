@@ -6,3 +6,25 @@ pandas
 requests
 matplotlib
 
+
+tests
+monitoring
+tqdm
+prometheus_fastapi_instrumentator
+locust
+time
+fastapi
+torchvision
+pytest
+utils_test
+uvicorn
+covidx
+itertools
+sklearn
+api
+evaluate
+PIL
+cv2
+prometheus_client
+yaml
+torch
