@@ -44,35 +44,33 @@
 
 | ID | Software System | Package Name | Programming Language | Version | Website                                          | Last verified at | Risk Level | Requirements               | Verification Reasoning                                                    |
 |----|-----------------|--------------|----------------------|---------|--------------------------------------------------|------------------|------------|----------------------------|---------------------------------------------------------------------------|
-| 1 | MacOS | numpy | Python | 2.0.2 | [https://numpy.org](https://numpy.org) | 2024-09-03 | N/A | N/A | N/A |
-| 2 | MacOS | scipy | Python | 1.13.1 | [https://scipy.org/](https://scipy.org/) | 2024-08-21 | N/A | N/A | N/A |
-| 3 | OS Independent | seaborn | Python | 0.13.2 | [unknown](unknown) | 2024-01-25 | N/A | N/A | N/A |
-| 4 | OS Independent | Jinja2 | Python | 3.1.4 | [unknown](unknown) | 2024-05-05 | N/A | N/A | N/A |
-| 5 | OS Independent | pandas | Python | 2.2.3 | [https://pandas.pydata.org](https://pandas.pydata.org) | 2024-09-20 | N/A | N/A | N/A |
-| 6 | OS Independent | requests | Python | 2.32.3 | [https://requests.readthedocs.io](https://requests.readthedocs.io) | 2024-05-29 | N/A | N/A | N/A |
-| 7 | Unknown | matplotlib | Python | 3.9.2 | [unknown](unknown) | 2024-08-13 | N/A | N/A | N/A |
-| 8 | Unknown |  | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
-| 9 | Unknown | tests | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
-| 10 | OS Independent | monitoring | Python | unknown | [unknown](unknown) | 2019-07-02 | unknown | unknown | unknown |
-| 11 | MacOS | tqdm | Python | 4.66.5 | [unknown](unknown) | 2024-08-03 | N/A | N/A | N/A |
-| 12 | Unknown | prometheus-fastapi-instrumentator | Python | 7.0.0 | [https://github.com/trallnag/prometheus-fastapi-instrumentator](https://github.com/trallnag/prometheus-fastapi-instrumentator) | 2024-03-13 | N/A | N/A | N/A |
-| 13 | OS Independent | locust | Python | unknown | [unknown](unknown) | 2024-09-28 | unknown | unknown | unknown |
-| 14 | Unknown | time | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
-| 15 | OS Independent | fastapi | Python | 0.115.0 | [unknown](unknown) | 2024-09-17 | N/A | N/A | N/A |
-| 16 | Unknown | torchvision | Python | 0.19.1 | [https://github.com/pytorch/vision](https://github.com/pytorch/vision) | 2024-09-04 | N/A | N/A | N/A |
-| 17 | MacOS | pytest | Only | unknown | [unknown](unknown) | 2024-09-10 | unknown | unknown | unknown |
-| 18 | Unknown | utils_test | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
-| 19 | OS Independent | uvicorn | Python | 0.31.0 | [unknown](unknown) | 2024-09-27 | N/A | N/A | N/A |
-| 20 | Unknown | covidx | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
-| 21 | Unknown | itertools | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
-| 22 | Unknown | sklearn | Python | unknown | [unknown](unknown) | 2023-12-01 | unknown | unknown | unknown |
-| 23 | Unknown | api | Unknown | unknown | [unknown](unknown) | 2017-11-08 | unknown | unknown | unknown |
-| 24 | OS Independent | evaluate | 3 | unknown | [unknown](unknown) | 2024-09-11 | unknown | unknown | unknown |
-| 25 | Unknown | PIL | Python | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
-| 26 | Unknown | cv2 | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
-| 27 | Unknown | prometheus_client | Python | 0.21.0 | [https://github.com/prometheus/client_python](https://github.com/prometheus/client_python) | 2024-09-20 | N/A | N/A | N/A |
-| 28 | Unknown | yaml | Python | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
-| 29 | Unknown | torch | Unknown | 2.4.1 | [https://pytorch.org/](https://pytorch.org/) | 2024-09-04 | N/A | N/A | N/A |
+| 1 | Unknown | torchvision | Python | 0.19.1 | [https://github.com/pytorch/vision](https://github.com/pytorch/vision) | 2024-09-04 | N/A | N/A | N/A |
+| 2 | MacOS | pytest | Only | unknown | [unknown](unknown) | 2024-09-10 | unknown | unknown | unknown |
+| 3 | Unknown | yaml | Python | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 4 | Unknown | cv2 | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 5 | Unknown | sklearn | Python | unknown | [unknown](unknown) | 2023-12-01 | unknown | unknown | unknown |
+| 6 | OS Independent | fastapi | Python | 0.115.0 | [unknown](unknown) | 2024-09-17 | N/A | N/A | N/A |
+| 7 | Unknown | torch | Unknown | 2.4.1 | [https://pytorch.org/](https://pytorch.org/) | 2024-09-04 | N/A | N/A | N/A |
+| 8 | OS Independent | seaborn | Python | 0.13.2 | [unknown](unknown) | 2024-01-25 | N/A | N/A | N/A |
+| 9 | Unknown | covidx | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 10 | MacOS | tqdm | Python | 4.66.5 | [unknown](unknown) | 2024-08-03 | N/A | N/A | N/A |
+| 11 | Unknown | prometheus-fastapi-instrumentator | Python | 7.0.0 | [https://github.com/trallnag/prometheus-fastapi-instrumentator](https://github.com/trallnag/prometheus-fastapi-instrumentator) | 2024-03-13 | N/A | N/A | N/A |
+| 12 | Unknown | utils_test | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 13 | Unknown | itertools | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 14 | OS Independent | locust | Python | unknown | [unknown](unknown) | 2024-09-28 | unknown | unknown | unknown |
+| 15 | OS Independent | uvicorn | Python | 0.31.0 | [unknown](unknown) | 2024-09-27 | N/A | N/A | N/A |
+| 16 | Unknown | time | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 17 | Unknown | tests | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 18 | OS Independent | monitoring | Python | unknown | [unknown](unknown) | 2019-07-02 | unknown | unknown | unknown |
+| 19 | Unknown | prometheus_client | Python | 0.21.0 | [https://github.com/prometheus/client_python](https://github.com/prometheus/client_python) | 2024-09-20 | N/A | N/A | N/A |
+| 20 | Unknown | PIL | Python | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 21 | Unknown | api | Unknown | unknown | [unknown](unknown) | 2017-11-08 | unknown | unknown | unknown |
+| 22 | OS Independent | evaluate | 3 | unknown | [unknown](unknown) | 2024-09-11 | unknown | unknown | unknown |
+| 23 | MacOS | scipy | Python | 1.13.1 | [https://scipy.org/](https://scipy.org/) | 2024-08-21 | N/A | N/A | N/A |
+| 24 | MacOS | numpy | Python | 2.0.2 | [https://numpy.org](https://numpy.org) | 2024-09-03 | N/A | N/A | N/A |
+| 25 | OS Independent | pandas | Python | 2.2.3 | [https://pandas.pydata.org](https://pandas.pydata.org) | 2024-09-20 | N/A | N/A | N/A |
+| 26 | Unknown | matplotlib | Python | 3.9.2 | [unknown](unknown) | 2024-08-13 | N/A | N/A | N/A |
+| 27 | Unknown |  | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
 
 
 
