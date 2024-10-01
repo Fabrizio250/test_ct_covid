@@ -63,21 +63,21 @@
 | 17 | OS Independent | seaborn | Python | 0.13.2 | [unknown](unknown) | 2024-01-25 | N/A | N/A | N/A |
 | 18 | OS Independent | Jinja2 | Python | 3.1.4 | [unknown](unknown) | 2024-05-05 | N/A | N/A | N/A |
 | 19 | OS Independent | requests | Python | 2.32.3 | [https://requests.readthedocs.io](https://requests.readthedocs.io) | 2024-05-29 | N/A | N/A | N/A |
-| 20 | OS Independent | monitoring | Python | unknown | [unknown](unknown) | 2019-07-02 | unknown | unknown | unknown |
-| 21 | Unknown | sklearn | Python | unknown | [unknown](unknown) | 2023-12-01 | unknown | unknown | unknown |
-| 22 | Unknown | tests | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
-| 23 | Unknown | utils_test | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
-| 24 | OS Independent | locust | Python | unknown | [unknown](unknown) | 2024-09-28 | unknown | unknown | unknown |
-| 25 | Unknown | time | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
-| 26 | Unknown | yaml | Python | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
-| 27 | Unknown | cv2 | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
-| 28 | Unknown | covidx | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
-| 29 | Unknown | PIL | Python | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 20 | Unknown | sklearn | Python | unknown | [unknown](unknown) | 2023-12-01 | unknown | unknown | unknown |
+| 21 | Unknown | covidx | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 22 | MacOS | pytest | Only | unknown | [unknown](unknown) | 2024-09-10 | unknown | unknown | unknown |
+| 23 | Unknown | yaml | Python | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 24 | Unknown | utils_test | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 25 | Unknown | tests | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 26 | Unknown | itertools | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 27 | Unknown | PIL | Python | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 28 | Unknown | prometheus_client | Python | 0.21.0 | [https://github.com/prometheus/client_python](https://github.com/prometheus/client_python) | 2024-09-20 | N/A | N/A | N/A |
+| 29 | OS Independent | locust | Python | unknown | [unknown](unknown) | 2024-09-28 | unknown | unknown | unknown |
 | 30 | Unknown | api | Unknown | unknown | [unknown](unknown) | 2017-11-08 | unknown | unknown | unknown |
-| 31 | Unknown | prometheus_client | Python | 0.21.0 | [https://github.com/prometheus/client_python](https://github.com/prometheus/client_python) | 2024-09-20 | N/A | N/A | N/A |
-| 32 | MacOS | pytest | Only | unknown | [unknown](unknown) | 2024-09-10 | unknown | unknown | unknown |
-| 33 | Unknown | itertools | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
-| 34 | OS Independent | evaluate | 3 | unknown | [unknown](unknown) | 2024-09-11 | unknown | unknown | unknown |
+| 31 | Unknown | cv2 | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
+| 32 | OS Independent | evaluate | 3 | unknown | [unknown](unknown) | 2024-09-11 | unknown | unknown | unknown |
+| 33 | OS Independent | monitoring | Python | unknown | [unknown](unknown) | 2019-07-02 | unknown | unknown | unknown |
+| 34 | Unknown | time | Unknown | unknown | [unknown](unknown) | Unknown | unknown | unknown | unknown |
 
 
 
